@@ -1,0 +1,32 @@
+<nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand"><span style="color: white;"><h1 style="color:gold">Welcome To My Movie Collection</h1></span></a>
+    <div class="d-flex">
+      <input #search  class="form-control me-2" type="search" placeholder="Movie" aria-label="Search">
+      <button class="btn btn-primary"  (click)="getAll(search.value)">Search</button>
+    </div>
+  </div>
+</nav>
+
+<br/><br/><br/>
+
+
+
+<div *ngIf="movies.length > 0" class="input-group">
+  <div class="form-outline">
+    <input placeholder="Specific Movie" #specificName  type="search" class="form-control" />
+  </div>
+  <button type="button" class="btn btn-success" (click)="SearchSpecificMovie(specificName.value)">
+    Search
+  </button>
+  <button *ngIf="filteresMovies.length < movies.length" type="button" class="btn btn-dark" (click)="filteresMovies=movies">
+    Gel All {{search.value}} Movies
+  </button>
+</div>
+
+<br/>
+
+
+<app-movie [movieData]="movie" *ngFor="let movie of filteresMovies"></app-movie>
+
+ 

@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="row no-gutters">
+        <div *ngIf="movieData.Poster != 'N/A' " class="col-auto">
+            <img [src]="movieData.Poster" class="img-fluid" [alt]="movieData.Title">
+        </div>
+        <div class="col">
+            <div class="card-block px-2">
+                <h4 class="card-title">{{movieData.Title}}</h4>
+                <div class="card-footer w-100 text-muted">
+                  <div *ngIf="movieData.imdbRating != 'N/A' "><strong>imdbRating :</strong> {{movieData.imdbRating}} <br/></div>
+                  <div *ngIf="movieData.Plot != 'N/A' "><strong>Description :</strong> {{movieData.Plot}} <br/></div>
+  
+                  <div *ngIf="ShowMore">
+                    <div *ngIf="movieData.Actors != 'N/A' "><strong>Actors :</strong> {{movieData.Actors}} <br/></div>
+                    <div *ngIf="movieData.Awards != 'N/A' "><strong>Awards :</strong> {{movieData.Awards}} <br/></div>
+                    <div *ngIf="movieData.BoxOffice != 'N/A' "><strong>BoxOffice :</strong> {{movieData.BoxOffice}} <br/></div>
+                    <div *ngIf="movieData.Country != 'N/A' "><strong>Country :</strong> {{movieData.Country}} <br/></div>
+                    <div *ngIf="movieData.DVD != 'N/A' "><strong>DVD :</strong> {{movieData.DVD}} <br/></div>
+                    <div *ngIf="movieData.Director != 'N/A' "><strong>Director :</strong> {{movieData.Director}} <br/></div>
+                    <div *ngIf="movieData.Genre != 'N/A' "><strong>Genre :</strong> {{movieData.Genre}} <br/></div>
+                    <div *ngIf="movieData.Language != 'N/A' "><strong>Language :</strong> {{movieData.Language}} <br/></div>
+                    <div *ngIf="movieData.Metascore != 'N/A' "><strong>Metascore :</strong> {{movieData.Metascore}} <br/></div>
+                    <div *ngIf="movieData.Production != 'N/A' "><strong>Production :</strong> {{movieData.Production}} <br/></div>
+                    <div *ngIf="movieData.Released != 'N/A' "><strong>Released :</strong> {{movieData.Released}} <br/></div>
+                    <div *ngIf="movieData.Runtime != 'N/A' "><strong>Runtime :</strong> {{movieData.Runtime}} <br/></div>
+                    <div *ngIf="movieData.Website != 'N/A' "><strong>Website :</strong> {{movieData.Website}} <br/></div>
+                    <div *ngIf="movieData.Writer != 'N/A' "><strong>Writer :</strong> {{movieData.Writer}} <br/></div>
+                    <div *ngIf="movieData.imdbVotes != 'N/A' "><strong>imdbVotes :</strong> {{movieData.imdbVotes}} <br/></div>
+                  </div>
+  
+                </div>
+  
+                <button (click)="ShowMore=!ShowMore" [class]="ShowMore ? 'btn btn-dark' : 'btn btn-primary' " >{{ShowMore ? "Read Less" : "Read More"}}</button>
+            
+              </div>
+        </div>
+    </div>
+    <br/>
+  </div>
